@@ -41,23 +41,26 @@ const Pagination = () => {
     <>
       <h2>Employee Table Data</h2>
       <table className="table">
-        <tr className="table-heading">
-          <th>ID</th>
-          <th>Name</th>
-          <th>Email</th>
-          <th>Role</th>
-        </tr>
-        {currentData.map((ele) => {
-          return (
+        <thead>
+          <tr className="table-heading">
+            <th>ID</th>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Role</th>
+          </tr>
+        </thead>
+        <tbody>
+          {currentData.map((ele) => (
             <tr key={ele.id} className="table-row">
               <td>{ele.id}</td>
               <td>{ele.name}</td>
               <td>{ele.email}</td>
               <td>{ele.role}</td>
             </tr>
-          );
-        })}
+          ))}
+        </tbody>
       </table>
+
       <div className="btn">
         <button onClick={handlePrevious}>Previous</button>
         <span>{currentpage}</span>
